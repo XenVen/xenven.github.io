@@ -3,161 +3,465 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Xennial Ventures - Building the Future of Startups</title>
-    <meta name="description" content="Xennial Ventures builds new products and startups, bridging innovation with execution.">
+    <title>Xennial Ventures - Strategic Venture Building</title>
+    <meta name="description" content="A modern venture-building firm combining strategic expertise with architectural precision to build enduring companies.">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="fixed top-0 w-full bg-slate-900/95 backdrop-blur-sm border-b border-white/10 z-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-[#F7F5F2]/95 backdrop-blur-sm border-b border-[#E0DED9]/50">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="flex justify-between items-center">
-                <a href="#" class="text-2xl font-bold text-white">
-                    Xennial<span class="text-blue-500">ventures</span>
+            <div class="flex justify-between items-center py-5">
+                <a href="#" class="text-2xl font-serif font-bold tracking-tight text-[#1A1A1A]">
+                    Xennial<span class="font-sans text-[#0F3A6B]">ventures</span>
                 </a>
-                <div class="hidden md:flex gap-8">
-                    <a href="#features" class="text-slate-400 font-medium hover:text-blue-500 transition-colors">Services</a>
-                    <a href="#process" class="text-slate-400 font-medium hover:text-blue-500 transition-colors">Process</a>
-                    <a href="#portfolio" class="text-slate-400 font-medium hover:text-blue-500 transition-colors">Portfolio</a>
-                    <a href="#contact" class="text-slate-400 font-medium hover:text-blue-500 transition-colors">Contact</a>
+                <div class="hidden md:flex gap-8 items-center">
+                    <a href="#expertise" class="text-[#4A4A4A] font-medium hover:text-[#0F3A6B] transition-colors text-sm uppercase tracking-wider">Expertise</a>
+                    <a href="#process" class="text-[#4A4A4A] font-medium hover:text-[#0F3A6B] transition-colors text-sm uppercase tracking-wider">Process</a>
+                    <a href="#portfolio" class="text-[#4A4A4A] font-medium hover:text-[#0F3A6B] transition-colors text-sm uppercase tracking-wider">Portfolio</a>
+                    <a href="#contact" class="px-6 py-2 bg-[#1A1A1A] text-white font-medium text-sm uppercase tracking-wider hover:bg-[#0F3A6B] transition-colors">Let's Talk</a>
                 </div>
+                <!-- Mobile menu button -->
+                <button class="md:hidden text-[#1A1A1A]" onclick="toggleMenu()">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#F7F5F2] border-b border-[#E0DED9]/50">
+            <div class="px-6 py-4 flex flex-col gap-4">
+                <a href="#expertise" class="text-[#4A4A4A] font-medium hover:text-[#0F3A6B] transition-colors" onclick="toggleMenu()">Expertise</a>
+                <a href="#process" class="text-[#4A4A4A] font-medium hover:text-[#0F3A6B] transition-colors" onclick="toggleMenu()">Process</a>
+                <a href="#portfolio" class="text-[#4A4A4A] font-medium hover:text-[#0F3A6B] transition-colors" onclick="toggleMenu()">Portfolio</a>
+                <a href="#contact" class="text-[#0F3A6B] font-medium uppercase tracking-wider" onclick="toggleMenu()">Let's Talk</a>
             </div>
         </div>
     </nav>
 
-    <section class="pt-32 pb-24 text-center max-w-7xl mx-auto">
-        <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-white to-blue-500 bg-clip-text text-transparent">
-            Building the Next Generation of Startups
-        </h1>
-        <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-10">
-            We're Xennial Ventures - where innovative ideas meet execution. We build new products and startups, bridging the gap between vision and reality.
-        </p>
-        <a href="#contact" class="inline-block px-10 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all hover:-translate-y-1 shadow-lg hover:shadow-blue-500/30">
-            Let's Build Together
-        </a>
-    </section>
-
-    <section class="py-24 bg-slate-800" id="features">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4">What We Do</h2>
-                <p class="text-slate-400">Comprehensive startup development from concept to market</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white/5 p-8 rounded-xl border border-white/10 hover:translate-y-2 transition-all hover:shadow-2xl hover:shadow-black/50">
-                    <div class="text-5xl mb-6">🚀</div>
-                    <h3 class="text-2xl font-semibold mb-4 text-blue-500">Startup Development</h3>
-                    <p class="text-slate-400">We help entrepreneurs transform their ideas into viable businesses with comprehensive development support and strategic guidance.</p>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 lg:pt-48 lg:pb-32 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[#1A1A1A] opacity-5 z-0"></div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-[#0F3A6B]/10 rounded-full mb-8">
+                        <span class="w-2 h-2 bg-[#0F3A6B] rounded-full"></span>
+                        <span class="text-[#0F3A6B] text-xs font-semibold uppercase tracking-widest">Strategic Venture Building</span>
+                    </div>
+                    <h1 class="text-5xl lg:text-7xl font-serif font-bold text-[#1A1A1A] leading-[1.05] mb-8 tracking-tight">
+                        We Build <br/>
+                        <span class="font-sans text-[#0F3A6B]">Venture-Ready</span> <br/>
+                        Enterprises
+                    </h1>
+                    <p class="text-[#4A4A4A] text-lg lg:text-xl leading-relaxed max-w-xl mb-10 font-light">
+                        A modern venture-building firm combining architectural precision with strategic expertise. We transform concepts into enduring companies through methodical development and market validation.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="px-8 py-4 bg-[#1A1A1A] text-white font-semibold text-sm uppercase tracking-widest hover:bg-[#0F3A6B] transition-colors">
+                            Start a Venture
+                        </a>
+                        <a href="#portfolio" class="px-8 py-4 border border-[#E0DED9] text-[#4A4A4A] font-semibold text-sm uppercase tracking-widest hover:border-[#1A1A1A] hover:text-[#1A1A1A] transition-colors">
+                            View Portfolio
+                        </a>
+                    </div>
                 </div>
-                <div class="bg-white/5 p-8 rounded-xl border border-white/10 hover:translate-y-2 transition-all hover:shadow-2xl hover:shadow-black/50">
-                    <div class="text-5xl mb-6">💡</div>
-                    <h3 class="text-2xl font-semibold mb-4 text-blue-500">Product Innovation</h3>
-                    <p class="text-slate-400">Our team designs and builds innovative products that solve real-world problems and create meaningful user experiences.</p>
-                </div>
-                <div class="bg-white/5 p-8 rounded-xl border border-white/10 hover:translate-y-2 transition-all hover:shadow-2xl hover:shadow-black/50">
-                    <div class="text-5xl mb-6">📈</div>
-                    <h3 class="text-2xl font-semibold mb-4 text-blue-500">Market Strategy</h3>
-                    <p class="text-slate-400">We develop data-driven go-to-market strategies that position your startup for rapid growth and long-term success.</p>
-                </div>
-                <div class="bg-white/5 p-8 rounded-xl border border-white/10 hover:translate-y-2 transition-all hover:shadow-2xl hover:shadow-black/50">
-                    <div class="text-5xl mb-6">🤝</div>
-                    <h3 class="text-2xl font-semibold mb-4 text-blue-500">Investor Connections</h3>
-                    <p class="text-slate-400">We help you connect with potential investors and build relationships that fuel your startup's growth journey.</p>
-                </div>
-                <div class="bg-white/5 p-8 rounded-xl border border-white/10 hover:translate-y-2 transition-all hover:shadow-2xl hover:shadow-black/50">
-                    <div class="text-5xl mb-6">🛠️</div>
-                    <h3 class="text-2xl font-semibold mb-4 text-blue-500">Technology Stack</h3>
-                    <p class="text-slate-400">Modern, scalable technology solutions built with the latest frameworks and best practices.</p>
-                </div>
-                <div class="bg-white/5 p-8 rounded-xl border border-white/10 hover:translate-y-2 transition-all hover:shadow-2xl hover:shadow-black/50">
-                    <div class="text-5xl mb-6">🎯</div>
-                    <h3 class="text-2xl font-semibold mb-4 text-blue-500">Growth Hacking</h3>
-                    <p class="text-slate-400">Creative strategies to accelerate user acquisition and market penetration.</p>
+                <div class="hidden lg:block">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-4">
+                            <div class="aspect-square bg-[#E0DED9] rounded-lg overflow-hidden">
+                                <div class="w-full h-full flex items-center justify-center text-9xl text-[#1A1A1A]/10">
+                                    <svg class="w-32 h-32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="aspect-square bg-[#1A1A1A] rounded-lg overflow-hidden">
+                                <div class="w-full h-full flex items-center justify-center text-9xl text-[#F7F5F2]/20">
+                                    <svg class="w-32 h-32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-4 pt-8">
+                            <div class="aspect-square bg-[#0F3A6B] rounded-lg overflow-hidden">
+                                <div class="w-full h-full flex items-center justify-center text-9xl text-[#F7F5F2]/20">
+                                    <svg class="w-32 h-32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="aspect-square bg-[#E0DED9] rounded-lg overflow-hidden">
+                                <div class="w-full h-full flex items-center justify-center text-9xl text-[#1A1A1A]/10">
+                                    <svg class="w-32 h-32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24" id="process">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4">Our Process</h2>
-                <p class="text-slate-400">From idea to exit - we guide you through every stage</p>
+    <!-- Expertise Section -->
+    <section class="py-24 lg:py-32 px-6 bg-[#F7F5F2]" id="expertise">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl lg:text-5xl font-serif font-bold text-[#1A1A1A] mb-6">Our Expertise</h2>
+                <p class="text-[#4A4A4A] text-lg max-w-2xl mx-auto font-light">
+                    We provide comprehensive venture development services with the precision of an established firm
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <!-- Service 1 -->
+                <div class="group">
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-[#1A1A1A] rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#0F3A6B] transition-colors">
+                            <svg class="w-8 h-8 text-[#F7F5F2]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-[#1A1A1A] mb-4">Venture Creation</h3>
+                        <p class="text-[#4A4A4A] leading-relaxed font-light">
+                            From ideation to market launch, we build complete ventures with robust business models and scalable technology stacks.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="group">
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-[#1A1A1A] rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#0F3A6B] transition-colors">
+                            <svg class="w-8 h-8 text-[#F7F5F2]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-[#1A1A1A] mb-4">Product Innovation</h3>
+                        <p class="text-[#4A4A4A] leading-relaxed font-light">
+                            We design and develop innovative products that solve real problems with intuitive user experiences and robust architecture.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="group">
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-[#1A1A1A] rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#0F3A6B] transition-colors">
+                            <svg class="w-8 h-8 text-[#F7F5F2]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-[#1A1A1A] mb-4">Market Strategy</h3>
+                        <p class="text-[#4A4A4A] leading-relaxed font-light">
+                            Data-driven go-to-market strategies positioned for rapid growth and sustainable competitive advantage.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="group">
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-[#1A1A1A] rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#0F3A6B] transition-colors">
+                            <svg class="w-8 h-8 text-[#F7F5F2]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-[#1A1A1A] mb-4">Investor Relations</h3>
+                        <p class="text-[#4A4A4A] leading-relaxed font-light">
+                            Strategic investor connections and fundraising support to fuel your venture's growth trajectory.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="group">
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-[#1A1A1A] rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#0F3A6B] transition-colors">
+                            <svg class="w-8 h-8 text-[#F7F5F2]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-[#1A1A1A] mb-4">Technology Stack</h3>
+                        <p class="text-[#4A4A4A] leading-relaxed font-light">
+                            Modern, scalable technology solutions built with enterprise-grade architecture and security.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="group">
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-[#1A1A1A] rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#0F3A6B] transition-colors">
+                            <svg class="w-8 h-8 text-[#F7F5F2]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 20V10"></path>
+                                <path d="M12 20V4"></path>
+                                <path d="M6 20v-6"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-[#1A1A1A] mb-4">Growth Hacking</h3>
+                        <p class="text-[#4A4A4A] leading-relaxed font-light">
+                            Creative strategies to accelerate user acquisition and market penetration through data-driven experimentation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-24 lg:py-32 px-6 bg-[#1A1A1A] text-[#F7F5F2]" id="process">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl lg:text-5xl font-serif font-bold mb-6">Our Process</h2>
+                <p class="text-[#E0DED9] text-lg max-w-2xl mx-auto font-light">
+                    A proven methodology from concept to scaled enterprise
+                </p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div class="text-center">
-                    <div class="text-6xl font-bold text-blue-500/20 mb-6">01</div>
-                    <h3 class="text-2xl font-semibold mb-4">Idea Assessment</h3>
-                    <p class="text-slate-400">We analyze your concept's viability, market potential, and competitive landscape to determine the best path forward.</p>
+                <!-- Step 1 -->
+                <div class="relative">
+                    <div class="text-6xl font-serif font-bold text-[#0F3A6B]/20 mb-6 select-none">01</div>
+                    <h3 class="text-2xl font-bold text-[#F7F5F2] mb-4">Discovery & Assessment</h3>
+                    <p class="text-[#E0DED9] leading-relaxed font-light">
+                        We analyze concepts for viability, market potential, and competitive positioning to determine optimal pathways forward.
+                    </p>
                 </div>
-                <div class="text-center">
-                    <div class="text-6xl font-bold text-blue-500/20 mb-6">02</div>
-                    <h3 class="text-2xl font-semibold mb-4">Product Development</h3>
-                    <p class="text-slate-400">Our team builds minimum viable products and iterates based on user feedback and market validation.</p>
+
+                <!-- Step 2 -->
+                <div class="relative">
+                    <div class="text-6xl font-serif font-bold text-[#0F3A6B]/20 mb-6 select-none">02</div>
+                    <h3 class="text-2xl font-bold text-[#F7F5F2] mb-4">Venture Development</h3>
+                    <p class="text-[#E0DED9] leading-relaxed font-light">
+                        Our team builds minimum viable products and iterates based on user feedback and market validation.
+                    </p>
                 </div>
-                <div class="text-center">
-                    <div class="text-6xl font-bold text-blue-500/20 mb-6">03</div>
-                    <h3 class="text-2xl font-semibold mb-4">Market Launch</h3>
-                    <p class="text-slate-400">We execute strategic go-to-market campaigns to generate buzz and acquire early adopters.</p>
+
+                <!-- Step 3 -->
+                <div class="relative">
+                    <div class="text-6xl font-serif font-bold text-[#0F3A6B]/20 mb-6 select-none">03</div>
+                    <h3 class="text-2xl font-bold text-[#F7F5F2] mb-4">Market Launch</h3>
+                    <p class="text-[#E0DED9] leading-relaxed font-light">
+                        We execute strategic go-to-market campaigns to generate buzz and acquire early adopters.
+                    </p>
                 </div>
-                <div class="text-center">
-                    <div class="text-6xl font-bold text-blue-500/20 mb-6">04</div>
-                    <h3 class="text-2xl font-semibold mb-4">Scaling & Growth</h3>
-                    <p class="text-slate-400">Our data-driven strategies help you optimize operations, acquire users, and scale sustainably.</p>
+
+                <!-- Step 4 -->
+                <div class="relative">
+                    <div class="text-6xl font-serif font-bold text-[#0F3A6B]/20 mb-6 select-none">04</div>
+                    <h3 class="text-2xl font-bold text-[#F7F5F2] mb-4">Scaling & Growth</h3>
+                    <p class="text-[#E0DED9] leading-relaxed font-light">
+                        Data-driven strategies to optimize operations, acquire users, and scale sustainably.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-slate-800" id="portfolio">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4">Our Portfolio</h2>
-                <p class="text-slate-400">Companies we've helped build and grow</p>
+    <!-- Portfolio Section -->
+    <section class="py-24 lg:py-32 px-6 bg-[#F7F5F2]" id="portfolio">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row lg:justify-between lg:items-end mb-20 gap-8">
+                <div>
+                    <h2 class="text-4xl lg:text-5xl font-serif font-bold text-[#1A1A1A] mb-6">Our Portfolio</h2>
+                    <p class="text-[#4A4A4A] text-lg max-w-xl font-light">
+                        Companies we've helped build and grow into market leaders
+                    </p>
+                </div>
+                <div class="text-right hidden lg:block">
+                    <div class="text-8xl font-serif font-bold text-[#1A1A1A]/5">12+</div>
+                    <div class="text-[#0F3A6B] font-semibold uppercase tracking-widest mt-2">Ventures Created</div>
+                </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white/5 rounded-xl overflow-hidden hover:translate-y-2 transition-all">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-semibold mb-3">TechNova</h3>
-                        <p class="text-slate-400">SaaS platform for remote team collaboration. We helped launch and scale to 10,000+ users.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Portfolio Item 1 -->
+                <div class="group cursor-pointer">
+                    <div class="mb-6">
+                        <div class="aspect-[4/3] bg-[#E0DED9] overflow-hidden">
+                            <div class="w-full h-full flex items-center justify-center">
+                                <svg class="w-48 h-48 text-[#1A1A1A]/20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="9" y1="3" x2="9" y2="21"></line>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
+                    <h3 class="text-3xl font-serif font-bold text-[#1A1A1A] mb-3">TechNova</h3>
+                    <div class="inline-block px-3 py-1 bg-[#0F3A6B]/10 rounded text-[#0F3A6B] text-sm font-semibold mb-3">SaaS Platform</div>
+                    <p class="text-[#4A4A4A] leading-relaxed font-light mb-6">
+                        Remote team collaboration platform launched and scaled to 10,000+ users. We developed the complete product suite and executed growth strategies.
+                    </p>
+                    <a href="#" class="inline-flex items-center text-[#0F3A6B] font-semibold uppercase tracking-widest text-sm hover:text-[#1A1A1A] transition-colors">
+                        Case Study
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
                 </div>
-                <div class="bg-white/5 rounded-xl overflow-hidden hover:translate-y-2 transition-all">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-semibold mb-3">GreenLeaf</h3>
-                        <p class="text-slate-400">Eco-friendly e-commerce marketplace. We built the platform and executed the growth strategy.</p>
+
+                <!-- Portfolio Item 2 -->
+                <div class="group cursor-pointer">
+                    <div class="mb-6">
+                        <div class="aspect-[4/3] bg-[#E0DED9] overflow-hidden">
+                            <div class="w-full h-full flex items-center justify-center">
+                                <svg class="w-48 h-48 text-[#1A1A1A]/20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
+                    <h3 class="text-3xl font-serif font-bold text-[#1A1A1A] mb-3">GreenLeaf</h3>
+                    <div class="inline-block px-3 py-1 bg-[#0F3A6B]/10 rounded text-[#0F3A6B] text-sm font-semibold mb-3">E-commerce</div>
+                    <p class="text-[#4A4A4A] leading-relaxed font-light mb-6">
+                        Eco-friendly marketplace platform with sustainable logistics. Built from concept and executed growth strategy to market leadership.
+                    </p>
+                    <a href="#" class="inline-flex items-center text-[#0F3A6B] font-semibold uppercase tracking-widest text-sm hover:text-[#1A1A1A] transition-colors">
+                        Case Study
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
                 </div>
-                <div class="bg-white/5 rounded-xl overflow-hidden hover:translate-y-2 transition-all">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-semibold mb-3">FinFlow</h3>
-                        <p class="text-slate-400">Financial analytics platform for SMBs. We developed the product and secured Series A funding.</p>
+
+                <!-- Portfolio Item 3 -->
+                <div class="group cursor-pointer">
+                    <div class="mb-6">
+                        <div class="aspect-[4/3] bg-[#E0DED9] overflow-hidden">
+                            <div class="w-full h-full flex items-center justify-center">
+                                <svg class="w-48 h-48 text-[#1A1A1A]/20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
+                    <h3 class="text-3xl font-serif font-bold text-[#1A1A1A] mb-3">FinFlow</h3>
+                    <div class="inline-block px-3 py-1 bg-[#0F3A6B]/10 rounded text-[#0F3A6B] text-sm font-semibold mb-3">Fintech</div>
+                    <p class="text-[#4A4A4A] leading-relaxed font-light mb-6">
+                        Financial analytics platform for SMBs. Developed product architecture and secured Series A funding for rapid scaling.
+                    </p>
+                    <a href="#" class="inline-flex items-center text-[#0F3A6B] font-semibold uppercase tracking-widest text-sm hover:text-[#1A1A1A] transition-colors">
+                        Case Study
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Portfolio Item 4 -->
+                <div class="group cursor-pointer">
+                    <div class="mb-6">
+                        <div class="aspect-[4/3] bg-[#E0DED9] overflow-hidden">
+                            <div class="w-full h-full flex items-center justify-center">
+                                <svg class="w-48 h-48 text-[#1A1A1A]/20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-3xl font-serif font-bold text-[#1A1A1A] mb-3">CloudAxis</h3>
+                    <div class="inline-block px-3 py-1 bg-[#0F3A6B]/10 rounded text-[#0F3A6B] text-sm font-semibold mb-3">Cloud Infrastructure</div>
+                    <p class="text-[#4A4A4A] leading-relaxed font-light mb-6">
+                        Cloud infrastructure management platform scaling to 500+ enterprise clients. Built scalable architecture and led growth initiatives.
+                    </p>
+                    <a href="#" class="inline-flex items-center text-[#0F3A6B] font-semibold uppercase tracking-widest text-sm hover:text-[#1A1A1A] transition-colors">
+                        Case Study
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 text-center max-w-2xl mx-auto" id="contact">
-        <h2 class="text-4xl font-bold mb-6">Ready to Start Your Venture?</h2>
-        <p class="text-slate-400 mb-10">Let's discuss how Xennial Ventures can help you build your next big idea. Reach out today for a free consultation.</p>
-        <a href="mailto:hello@xennialventures.com" class="inline-block px-10 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all hover:-translate-y-1 shadow-lg hover:shadow-blue-500/30">
-            Get in Touch
-        </a>
-    </section>
-
-    <footer class="bg-slate-800 py-12 border-t border-white/10 text-center">
-        <div class="max-w-7xl mx-auto px-6">
-            <a href="#" class="text-xl font-bold text-white mb-8 inline-block">
-                Xennial<span class="text-blue-500">ventures</span>
+    <!-- CTA Section -->
+    <section class="py-24 lg:py-32 px-6 bg-[#0F3A6B] text-[#F7F5F2] text-center" id="contact">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl lg:text-6xl font-serif font-bold mb-8 tracking-tight">Ready to Start Your Venture?</h2>
+            <p class="text-xl lg:text-2xl text-[#E0DED9] mb-12 font-light max-w-2xl mx-auto">
+                Let's discuss how Xennial Ventures can help you build your next big idea. Reach out today for a strategic consultation.
+            </p>
+            <a href="mailto:hello@xennialventures.com" class="inline-block px-10 py-5 bg-[#F7F5F2] text-[#1A1A1A] font-bold text-sm uppercase tracking-widest hover:bg-[#1A1A1A] hover:text-[#F7F5F2] transition-all">
+                Start a Conversation
             </a>
-            <div class="flex justify-center gap-8 mb-8">
-                <a href="#features" class="text-slate-400 hover:text-blue-500 transition-colors">Services</a>
-                <a href="#process" class="text-slate-400 hover:text-blue-500 transition-colors">Process</a>
-                <a href="#portfolio" class="text-slate-400 hover:text-blue-500 transition-colors">Portfolio</a>
-                <a href="#contact" class="text-slate-400 hover:text-blue-500 transition-colors">Contact</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1A1A1A] text-[#E0DED9] py-16 border-t border-[#2A2A2A]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <a href="#" class="text-3xl font-serif font-bold text-[#F7F5F2] mb-8 inline-block">
+                        Xennial<span class="text-[#0F3A6B]">ventures</span>
+                    </a>
+                    <p class="text-[#E0DED9] leading-relaxed mb-8 max-w-md">
+                        A modern venture-building firm combining strategic expertise with architectural precision to create enduring companies.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-[#2A2A2A] rounded flex items-center justify-center hover:bg-[#0F3A6B] transition-colors">
+                            <svg class="w-5 h-5 text-[#E0DED9]" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 7.185 0 .538.056 1.078.155 1.616-5.807-.296-10.955-3.062-14.422-7.274-1.377.246-2.733.451-4.081.513-.377-.405-.603-.979-.603-1.574 0-1.093.223-2.148.615-3.087 1.048 1.287 2.629 2.15 4.355 2.406-1.649-.826-2.972-2.135-3.764-3.738-.634 1.155-.675 2.521-.153 3.623 0 1.123.128 2.222.371 3.222 1.344-1.432 3.262-2.347 5.43-2.607-.624 1.153-.963 2.474-.963 3.891 0 2.996 2.307 5.474 5.47 5.474 2.61 0 4.993-1.695 5.762-4.115.562.124 1.103.227 1.633.317-1.653-.523-2.979-1.936-3.675-3.663 1.026.16 2.037.263 3.049.263 3.665 0 5.625-3.038 5.625-5.665 0-.086-.012-.172-.026-.253.395-.282.734-.634 1.004-1.026z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-[#2A2A2A] rounded flex items-center justify-center hover:bg-[#0F3A6B] transition-colors">
+                            <svg class="w-5 h-5 text-[#E0DED9]" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.573c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667h-3.549v-10.204c0-1.124-.012-2.56-1.549-2.56-1.549 0-1.811 1.202-1.811 2.443v10.068c0 2.397 1.411 3.694 3.549 3.694 1.656 0 2.443-1.132 2.443-2.443v-11.157h3.549l.044 1.569h.046c.019.654.032 1.308.032 1.962v5.703h3.554c.059.739.096 1.478.096 2.215 0 4.694-3.253 5.369-6.13 5.369-2.61 0-4.694-1.573-5.563-3.829.347.049.695.077 1.043.077 4.97 0 7.637-3.769 7.637-7.433 0-.143-.003-.286-.01-.429.523.347 1.043.645 1.595.805z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-[#2A2A2A] rounded flex items-center justify-center hover:bg-[#0F3A6B] transition-colors">
+                            <svg class="w-5 h-5 text-[#E0DED9]" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 4 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-[#F7F5F2] mb-6 uppercase tracking-widest text-sm">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#expertise" class="hover:text-[#0F3A6B] transition-colors">Venture Creation</a></li>
+                        <li><a href="#expertise" class="hover:text-[#0F3A6B] transition-colors">Product Innovation</a></li>
+                        <li><a href="#expertise" class="hover:text-[#0F3A6B] transition-colors">Market Strategy</a></li>
+                        <li><a href="#expertise" class="hover:text-[#0F3A6B] transition-colors">Investor Relations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-[#F7F5F2] mb-6 uppercase tracking-widest text-sm">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#process" class="hover:text-[#0F3A6B] transition-colors">Process</a></li>
+                        <li><a href="#portfolio" class="hover:text-[#0F3A6B] transition-colors">Portfolio</a></li>
+                        <li><a href="#" class="hover:text-[#0F3A6B] transition-colors">About</a></li>
+                        <li><a href="#contact" class="hover:text-[#0F3A6B] transition-colors">Contact</a></li>
+                    </ul>
+                </div>
             </div>
-            <p class="text-slate-400 text-sm">&copy; 2026 Xennial Ventures. All rights reserved.</p>
+            <div class="border-t border-[#2A2A2A] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm">&copy; 2026 Xennial Ventures. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-sm hover:text-[#0F3A6B] transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-sm hover:text-[#0F3A6B] transition-colors">Terms of Service</a>
+                </div>
+            </div>
         </div>
     </footer>
 
