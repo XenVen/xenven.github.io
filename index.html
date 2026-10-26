@@ -5,494 +5,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Xennial Ventures - Building the Future of Startups</title>
     <meta name="description" content="Xennial Ventures builds new products and startups, bridging innovation with execution.">
-    <style>
-        :root {
-            --primary-color: #0f172a;
-            --secondary-color: #1e293b;
-            --accent-color: #3b82f6;
-            --accent-hover: #2563eb;
-            --text-color: #f1f5f9;
-            --text-muted: #94a3b8;
-            --success-color: #10b981;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background-color: var(--primary-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: color 0.3s ease;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-color);
-        }
-
-        .logo span {
-            color: var(--accent-color);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 8rem 2rem 6rem;
-            text-align: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--text-color) 0%, var(--accent-color) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 2.5rem;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background-color: var(--accent-color);
-            color: white;
-            font-weight: 600;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
-        }
-
-        /* Features Section */
-        .features {
-            padding: 6rem 2rem;
-            background-color: var(--secondary-color);
-        }
-
-        .section-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-color);
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--accent-color);
-        }
-
-        .feature-card p {
-            color: var(--text-muted);
-        }
-
-        /* Process Section */
-        .process {
-            padding: 6rem 2rem;
-        }
-
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .process-step {
-            text-align: center;
-        }
-
-        .step-number {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--accent-color);
-            opacity: 0.2;
-            margin-bottom: 1.5rem;
-        }
-
-        .process-step h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-color);
-        }
-
-        .process-step p {
-            color: var(--text-muted);
-        }
-
-        /* Portfolio Section */
-        .portfolio {
-            padding: 6rem 2rem;
-            background-color: var(--secondary-color);
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .portfolio-item {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .portfolio-item-content {
-            padding: 2rem;
-        }
-
-        .portfolio-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-color);
-        }
-
-        .portfolio-item p {
-            color: var(--text-muted);
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 6rem 2rem;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .contact p {
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-        }
-
-        .contact a {
-            color: var(--accent-color);
-            font-weight: 600;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--secondary-color);
-            padding: 3rem 2rem;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-        }
-
-        .footer-links a:hover {
-            color: var(--accent-color);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .section-header h2 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">Xennial<span>ventures</span></a>
-            <div class="nav-links">
-                <a href="#features">Services</a>
-                <a href="#process">Process</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#contact">Contact</a>
+    <nav class="fixed top-0 w-full bg-slate-900/95 backdrop-blur-sm border-b border-white/10 z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-white">
+                    Xennial<span class="text-blue-500">ventures</span>
+                </a>
+                <div class="hidden md:flex gap-8">
+                    <a href="#features" class="text-slate-400 font-medium hover:text-blue-500 transition-colors">Services</a>
+                    <a href="#process" class="text-slate-400 font-medium hover:text-blue-500 transition-colors">Process</a>
+                    <a href="#portfolio" class="text-slate-400 font-medium hover:text-blue-500 transition-colors">Portfolio</a>
+                    <a href="#contact" class="text-slate-400 font-medium hover:text-blue-500 transition-colors">Contact</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <section class="hero">
-        <h1>Building the Next Generation of Startups</h1>
-        <p>We're Xennial Ventures - where innovative ideas meet execution. We build new products and startups, bridging the gap between vision and reality.</p>
-        <a href="#contact" class="cta-button">Let's Build Together</a>
+    <section class="pt-32 pb-24 text-center max-w-7xl mx-auto">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-white to-blue-500 bg-clip-text text-transparent">
+            Building the Next Generation of Startups
+        </h1>
+        <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-10">
+            We're Xennial Ventures - where innovative ideas meet execution. We build new products and startups, bridging the gap between vision and reality.
+        </p>
+        <a href="#contact" class="inline-block px-10 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all hover:-translate-y-1 shadow-lg hover:shadow-blue-500/30">
+            Let's Build Together
+        </a>
     </section>
 
-    <section class="features" id="features">
-        <div class="section-container">
-            <div class="section-header">
-                <h2>What We Do</h2>
-                <p>Comprehensive startup development from concept to market</p>
+    <section class="py-24 bg-slate-800" id="features">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">What We Do</h2>
+                <p class="text-slate-400">Comprehensive startup development from concept to market</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🚀</div>
-                    <h3>Startup Development</h3>
-                    <p>We help entrepreneurs transform their ideas into viable businesses with comprehensive development support and strategic guidance.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white/5 p-8 rounded-xl border border-white/10 hover:translate-y-2 transition-all hover:shadow-2xl hover:shadow-black/50">
+                    <div class="text-5xl mb-6">🚀</div>
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-500">Startup Development</h3>
+                    <p class="text-slate-400">We help entrepreneurs transform their ideas into viable businesses with comprehensive development support and strategic guidance.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💡</div>
-                    <h3>Product Innovation</h3>
-                    <p>Our team designs and builds innovative products that solve real-world problems and create meaningful user experiences.</p>
+                <div class="bg-white/5 p-8 rounded-xl border border-white/10 hover:translate-y-2 transition-all hover:shadow-2xl hover:shadow-black/50">
+                    <div class="text-5xl mb-6">💡</div>
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-500">Product Innovation</h3>
+                    <p class="text-slate-400">Our team designs and builds innovative products that solve real-world problems and create meaningful user experiences.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📈</div>
-                    <h3>Market Strategy</h3>
-                    <p>We develop data-driven go-to-market strategies that position your startup for rapid growth and long-term success.</p>
+                <div class="bg-white/5 p-8 rounded-xl border border-white/10 hover:translate-y-2 transition-all hover:shadow-2xl hover:shadow-black/50">
+                    <div class="text-5xl mb-6">📈</div>
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-500">Market Strategy</h3>
+                    <p class="text-slate-400">We develop data-driven go-to-market strategies that position your startup for rapid growth and long-term success.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🤝</div>
-                    <h3>Investor Connections</h3>
-                    <p>We help you connect with potential investors and build relationships that fuel your startup's growth journey.</p>
+                <div class="bg-white/5 p-8 rounded-xl border border-white/10 hover:translate-y-2 transition-all hover:shadow-2xl hover:shadow-black/50">
+                    <div class="text-5xl mb-6">🤝</div>
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-500">Investor Connections</h3>
+                    <p class="text-slate-400">We help you connect with potential investors and build relationships that fuel your startup's growth journey.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🛠️</div>
-                    <h3>Technology Stack</h3>
-                    <p>Modern, scalable technology solutions built with the latest frameworks and best practices.</p>
+                <div class="bg-white/5 p-8 rounded-xl border border-white/10 hover:translate-y-2 transition-all hover:shadow-2xl hover:shadow-black/50">
+                    <div class="text-5xl mb-6">🛠️</div>
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-500">Technology Stack</h3>
+                    <p class="text-slate-400">Modern, scalable technology solutions built with the latest frameworks and best practices.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Growth Hacking</h3>
-                    <p>Creative strategies to accelerate user acquisition and market penetration.</p>
+                <div class="bg-white/5 p-8 rounded-xl border border-white/10 hover:translate-y-2 transition-all hover:shadow-2xl hover:shadow-black/50">
+                    <div class="text-5xl mb-6">🎯</div>
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-500">Growth Hacking</h3>
+                    <p class="text-slate-400">Creative strategies to accelerate user acquisition and market penetration.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="process" id="process">
-        <div class="section-container">
-            <div class="section-header">
-                <h2>Our Process</h2>
-                <p>From idea to exit - we guide you through every stage</p>
+    <section class="py-24" id="process">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Our Process</h2>
+                <p class="text-slate-400">From idea to exit - we guide you through every stage</p>
             </div>
-            <div class="process-grid">
-                <div class="process-step">
-                    <div class="step-number">01</div>
-                    <h3>Idea Assessment</h3>
-                    <p>We analyze your concept's viability, market potential, and competitive landscape to determine the best path forward.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="text-center">
+                    <div class="text-6xl font-bold text-blue-500/20 mb-6">01</div>
+                    <h3 class="text-2xl font-semibold mb-4">Idea Assessment</h3>
+                    <p class="text-slate-400">We analyze your concept's viability, market potential, and competitive landscape to determine the best path forward.</p>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">02</div>
-                    <h3>Product Development</h3>
-                    <p>Our team builds minimum viable products and iterates based on user feedback and market validation.</p>
+                <div class="text-center">
+                    <div class="text-6xl font-bold text-blue-500/20 mb-6">02</div>
+                    <h3 class="text-2xl font-semibold mb-4">Product Development</h3>
+                    <p class="text-slate-400">Our team builds minimum viable products and iterates based on user feedback and market validation.</p>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">03</div>
-                    <h3>Market Launch</h3>
-                    <p>We execute strategic go-to-market campaigns to generate buzz and acquire early adopters.</p>
+                <div class="text-center">
+                    <div class="text-6xl font-bold text-blue-500/20 mb-6">03</div>
+                    <h3 class="text-2xl font-semibold mb-4">Market Launch</h3>
+                    <p class="text-slate-400">We execute strategic go-to-market campaigns to generate buzz and acquire early adopters.</p>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">04</div>
-                    <h3>Scaling & Growth</h3>
-                    <p>Our data-driven strategies help you optimize operations, acquire users, and scale sustainably.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="portfolio" id="portfolio">
-        <div class="section-container">
-            <div class="section-header">
-                <h2>Our Portfolio</h2>
-                <p>Companies we've helped build and grow</p>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <h3>TechNova</h3>
-                        <p>SaaS platform for remote team collaboration. we helped launch and scale to 10,000+ users.</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <h3>GreenLeaf</h3>
-                        <p>Eco-friendly e-commerce marketplace. we built the platform and executed the growth strategy.</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <h3>FinFlow</h3>
-                        <p>Financial analytics platform for SMBs. we developed the product and secured Series A funding.</p>
-                    </div>
+                <div class="text-center">
+                    <div class="text-6xl font-bold text-blue-500/20 mb-6">04</div>
+                    <h3 class="text-2xl font-semibold mb-4">Scaling & Growth</h3>
+                    <p class="text-slate-400">Our data-driven strategies help you optimize operations, acquire users, and scale sustainably.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="contact" id="contact">
-        <h2>Ready to Start Your Venture?</h2>
-        <p>Let's discuss how Xennial Ventures can help you build your next big idea. Reach out today for a free consultation.</p>
-        <a href="mailto:hello@xennialventures.com" class="cta-button">Get in Touch</a>
+    <section class="py-24 bg-slate-800" id="portfolio">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Our Portfolio</h2>
+                <p class="text-slate-400">Companies we've helped build and grow</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white/5 rounded-xl overflow-hidden hover:translate-y-2 transition-all">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold mb-3">TechNova</h3>
+                        <p class="text-slate-400">SaaS platform for remote team collaboration. We helped launch and scale to 10,000+ users.</p>
+                    </div>
+                </div>
+                <div class="bg-white/5 rounded-xl overflow-hidden hover:translate-y-2 transition-all">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold mb-3">GreenLeaf</h3>
+                        <p class="text-slate-400">Eco-friendly e-commerce marketplace. We built the platform and executed the growth strategy.</p>
+                    </div>
+                </div>
+                <div class="bg-white/5 rounded-xl overflow-hidden hover:translate-y-2 transition-all">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold mb-3">FinFlow</h3>
+                        <p class="text-slate-400">Financial analytics platform for SMBs. We developed the product and secured Series A funding.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <a href="#" class="logo" style="font-size: 1.25rem; display: inline-block; margin-bottom: 1rem;">Xennial<span>ventures</span></a>
-            <div class="footer-links">
-                <a href="#features">Services</a>
-                <a href="#process">Process</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#contact">Contact</a>
+    <section class="py-24 text-center max-w-2xl mx-auto" id="contact">
+        <h2 class="text-4xl font-bold mb-6">Ready to Start Your Venture?</h2>
+        <p class="text-slate-400 mb-10">Let's discuss how Xennial Ventures can help you build your next big idea. Reach out today for a free consultation.</p>
+        <a href="mailto:hello@xennialventures.com" class="inline-block px-10 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all hover:-translate-y-1 shadow-lg hover:shadow-blue-500/30">
+            Get in Touch
+        </a>
+    </section>
+
+    <footer class="bg-slate-800 py-12 border-t border-white/10 text-center">
+        <div class="max-w-7xl mx-auto px-6">
+            <a href="#" class="text-xl font-bold text-white mb-8 inline-block">
+                Xennial<span class="text-blue-500">ventures</span>
+            </a>
+            <div class="flex justify-center gap-8 mb-8">
+                <a href="#features" class="text-slate-400 hover:text-blue-500 transition-colors">Services</a>
+                <a href="#process" class="text-slate-400 hover:text-blue-500 transition-colors">Process</a>
+                <a href="#portfolio" class="text-slate-400 hover:text-blue-500 transition-colors">Portfolio</a>
+                <a href="#contact" class="text-slate-400 hover:text-blue-500 transition-colors">Contact</a>
             </div>
-            <p style="color: var(--text-muted); font-size: 0.9rem;">© 2026 Xennial Ventures. All rights reserved.</p>
+            <p class="text-slate-400 text-sm">&copy; 2026 Xennial Ventures. All rights reserved.</p>
         </div>
     </footer>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add active state to navigation on scroll
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-links a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= sectionTop - 100) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.style.color = link.getAttribute('href') === `#${current}` 
-                    ? 'var(--accent-color)' 
-                    : 'var(--text-muted)';
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
